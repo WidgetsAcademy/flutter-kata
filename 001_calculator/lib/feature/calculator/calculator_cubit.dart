@@ -3,39 +3,29 @@ import 'package:function_tree/function_tree.dart';
 
 /// The state of the calculator
 abstract class CalculatorState {
-  // TODO(dkbast): implement state
-  /// display impl.
-  String getDisplay();
+
+  /// lala
+  String get display => '0';
 }
 
 /// The reset state
-class ResetState extends CalculatorState {
-  @override
-  String getDisplay() {
-    return '0';
-  }
-}
+class ResetState extends CalculatorState {}
 
 /// The display update state
 class UpdateDisplayState extends CalculatorState {
-  /// Constructor
+
+  /// lala
   UpdateDisplayState({required this.display});
 
-  /// Display property
-  final String display;
-
+  /// lalal
   @override
-  String getDisplay() {
-    return display;
-  }
+  String display;
 }
 
 /// The reset state
 class DivideByZeroState extends CalculatorState {
   @override
-  String getDisplay() {
-    return 'ERROR / 0';
-  }
+  String get display => 'lala';
 }
 
 /// The business logic of the calculator

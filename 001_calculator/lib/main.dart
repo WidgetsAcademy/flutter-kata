@@ -16,10 +16,7 @@ class CalculatorApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: BlocProvider<CalculatorCubit>(
-        create: (context) => CalculatorCubit(),
-        child: const CalculatorView(),
-      )
+      home: const CalculatorView()
     );
   }
 }
