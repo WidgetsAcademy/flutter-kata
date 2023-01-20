@@ -1,5 +1,6 @@
 import 'package:calculator/feature/calculator/calculator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() => runApp(const CalculatorApp());
 
@@ -15,7 +16,10 @@ class CalculatorApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const CalculatorView(),
+      home: BlocProvider<CalculatorCubit>(
+        create: (context) => CalculatorCubit(),
+        child: const CalculatorView(),
+      )
     );
   }
 }

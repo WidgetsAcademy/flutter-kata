@@ -1,7 +1,9 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:calculator/feature/calculator/calculator.dart';
 import 'package:calculator/feature/calculator/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// The view of the calculator
 /// If a user wants to use the calculator, this is the widget they should use
@@ -15,6 +17,10 @@ class CalculatorView extends StatefulWidget {
 }
 
 class _CalculatorPageState extends State<CalculatorView> {
+  void handlePressed(String text) {
+    context.read<CalculatorCubit>().doSomethingWithKey(text);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,10 +33,7 @@ class _CalculatorPageState extends State<CalculatorView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
 // A Text Widget that displays the current number
-            Text(
-              '0',
-              style: Theme.of(context).textTheme.displayLarge,
-            ),
+            const CalculatorDisplay(),
 // A Row Widget that contains the keypad
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -45,15 +48,15 @@ class _CalculatorPageState extends State<CalculatorView> {
                       children: <Widget>[
                         Button(
                           text: '7',
-                          onPressed: () {},
+                          onPressed: handlePressed,
                         ),
                         Button(
                           text: '8',
-                          onPressed: () {},
+                          onPressed: handlePressed,
                         ),
                         Button(
                           text: '9',
-                          onPressed: () {},
+                          onPressed: handlePressed,
                         ),
                       ],
                     ),
@@ -63,15 +66,15 @@ class _CalculatorPageState extends State<CalculatorView> {
                       children: <Widget>[
                         Button(
                           text: '4',
-                          onPressed: () {},
+                          onPressed: handlePressed,
                         ),
                         Button(
                           text: '5',
-                          onPressed: () {},
+                          onPressed: handlePressed,
                         ),
                         Button(
                           text: '6',
-                          onPressed: () {},
+                          onPressed: handlePressed,
                         ),
                       ],
                     ),
@@ -81,15 +84,15 @@ class _CalculatorPageState extends State<CalculatorView> {
                       children: <Widget>[
                         Button(
                           text: '1',
-                          onPressed: () {},
+                          onPressed: handlePressed,
                         ),
                         Button(
                           text: '2',
-                          onPressed: () {},
+                          onPressed: handlePressed,
                         ),
                         Button(
                           text: '3',
-                          onPressed: () {},
+                          onPressed: handlePressed,
                         ),
                       ],
                     ),
@@ -99,15 +102,15 @@ class _CalculatorPageState extends State<CalculatorView> {
                       children: <Widget>[
                         Button(
                           text: '0',
-                          onPressed: () {},
+                          onPressed: handlePressed,
                         ),
                         Button(
                           text: '.',
-                          onPressed: () {},
+                          onPressed: handlePressed,
                         ),
                         Button(
                           text: '+/-',
-                          onPressed: () {},
+                          onPressed: handlePressed,
                         ),
                       ],
                     ),
@@ -119,27 +122,27 @@ class _CalculatorPageState extends State<CalculatorView> {
                   children: <Widget>[
                     Button(
                       text: '+',
-                      onPressed: () {},
+                      onPressed: handlePressed,
                     ),
                     Button(
                       text: '-',
-                      onPressed: () {},
+                      onPressed: handlePressed,
                     ),
                     Button(
                       text: '*',
-                      onPressed: () {},
+                      onPressed: handlePressed,
                     ),
                     Button(
                       text: '/',
-                      onPressed: () {},
+                      onPressed: handlePressed,
                     ),
                     Button(
                       text: '=',
-                      onPressed: () {},
+                      onPressed: handlePressed,
                     ),
                     Button(
                       text: 'C',
-                      onPressed: () {},
+                      onPressed: handlePressed,
                     ),
                   ],
                 ),
