@@ -70,6 +70,7 @@ class CalculatorCubit extends Cubit<CalculatorState> {
       case '-':
       case '/':
       case '*':
+      case '^':
         addOperator(key);
         break;
       case '=':

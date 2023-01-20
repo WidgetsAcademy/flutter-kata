@@ -137,6 +137,10 @@ class _CalculatorPageState extends State<CalculatorView> {
                       onPressed: handlePressed,
                     ),
                     Button(
+                      text: '^',
+                      onPressed: handlePressed,
+                    ),
+                    Button(
                       text: '=',
                       onPressed: handlePressed,
                     ),
